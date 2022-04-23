@@ -11,7 +11,7 @@ app1 = MultiPage1()
 app2 = MultiPage2()
 
 
-display = Image.open('C:/Users/soont/OneDrive/Desktop/H1/AnnaMatching01/Logo.png')
+display = Image.open('Logo.png')
 st.image(display, width = 800)
 st.title('Welcome to AnnaMatching')
 st.header("The Best platform to find your best partner")
