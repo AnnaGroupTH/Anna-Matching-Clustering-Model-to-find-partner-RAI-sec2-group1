@@ -31,7 +31,7 @@ class MultiPage1(MultiPage):
         if y:
             placeholder1.empty()
             if x==True:
-                dataset_path = "C:/Users/soont/OneDrive/Desktop/H1/AnnaMatching/Anna-Matching Survey (Responses).csv"
+                dataset_path = "Anna-Matching Survey (Responses).csv"
                 df = pd.read_csv(dataset_path)
                 if fr"{email}" in list(df["Email Address"]):
                     print(z)
