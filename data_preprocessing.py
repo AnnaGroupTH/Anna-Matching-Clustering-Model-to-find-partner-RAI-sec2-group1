@@ -42,10 +42,7 @@ def preprocessing(df):
     return df 
 
 
-def preprocessing_csv_to_df(dataset_path):
-
-
-    # reading csv or excel -> DataFrame
+def read_dataset(dataset_path): 
     if ".xlsx" in dataset_path:
         df = pd.DataFrame(pd.read_excel(dataset_path))
 
@@ -53,7 +50,10 @@ def preprocessing_csv_to_df(dataset_path):
         df = pd.read_csv(dataset_path)
 
     else: print("Please check file format!")
+    return df 
 
+
+def preprocessing_csv_to_df(df):
 
     # sparing df 
     df1 = df.copy()
@@ -81,22 +81,30 @@ def add_user_info(df,user_df):
     return df 
 
 
-def drop_user_info(df): 
+def drop_groups_info(df,user_email,survey_done): 
 
-    df = df.loc[df['group'] == df["group"][len(df)-1]]
-    # df = df.loc[df['group'] == df["group"][len(df)-1]]
-    # df = df.loc[df['group'] == 4]
-    # df = df[:][:len(df)-1]
+    if survey_done == False:
+        print("hugh")
+        df = df.loc[df['group'] == df["group"][len(df)-1]]
+        df = df.iloc[:-1]
+    else: 
+        print(df)
+        print(df.columns)
+        df_useremail = list(df.loc[df[fr"{df.columns[1]}"] == fr"{user_email}"]["group"])
+        print(df_useremail)
+        print(type(df_useremail))
+        print(list(df_useremail))
+        df = df.loc[df['group'] == df_useremail[0]]
+        print(type(df))
+        print(df)
+        df = df.loc[df[fr"{df.columns[1]}"] != fr"{user_email}"]
 
-    return df 
+    return df
 
 
 def join_id_clts_and_sparing_df(identified_clusters,sparing_df,save_csv=False):
     
-    # print(len(identified_clusters))
-    # print(type(identified_clusters))
     y_df = pd.DataFrame(identified_clusters, columns=["group"])
-    # y_df.rename(columns={"0","group"})
     sparing_df = pd.DataFrame(sparing_df)
     df = y_df.join(sparing_df)
 
