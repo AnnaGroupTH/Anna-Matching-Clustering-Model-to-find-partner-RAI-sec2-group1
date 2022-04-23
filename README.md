@@ -1,11 +1,6 @@
-# AI_Web-Backend
+Anna Matching Group 
 
-Judnuk JudJing 
-
-1. Don't mess up with multipage.py 
-2. main.py and streamlit_ShowResult.py are not used to run the web 
-4. When trying to run web in your local, run app.py by this command streamlit run .../AnnaMatching01/app.py
-5. When adding clustering model, do it in clustering.py 
-6. When trying to login app: Username = Hugh, Password = 63110111, Username = Nuk, Password = 63011322,or  Username = Unna, Password = 63011371
-
-*** Not finished yet 
+1. This folder is consisted of three parts:Preprocessing part, ML part, and UI part. 
+2. For Manual preprocessing part, it is in data_preprocessing.py. For Standardscaler and PCA, it is in clustering.py.
+4. For ML part, it is only in clustering.py.
+5. For UI part, it is contained in app.py, multipage.py, and streamlit_page.py 
