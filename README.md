@@ -1,4 +1,4 @@
-Anna Matching Group 
+Anna Matching Application
 
 1. This folder is consisted of three parts:Preprocessing part, ML part, and UI part. 
 2. For Manual preprocessing part, it is in data_preprocessing.py. For Standardscaler and PCA, it is in clustering.py.
