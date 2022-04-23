@@ -11,8 +11,11 @@ app1 = MultiPage1()
 app2 = MultiPage2()
 
 
-display = Image.open('Logo.png')
-st.image(display, width = 300)
+display1 = Image.open('Logo1.png')
+st.image(display1, width = 650)
+display2 = Image.open('Logo2.png')
+st.image(display2, width = 650)
+
 st.title('Welcome to AnnaMatching')
 st.header("The Best platform to find your best partner")
 
