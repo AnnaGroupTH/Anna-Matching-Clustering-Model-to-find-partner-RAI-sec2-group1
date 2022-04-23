@@ -171,7 +171,7 @@ def collect_user_info_page():
 
 def show_data_page():
 
-    dataset_path = "C:/Users/soont/OneDrive/Desktop/H1/AnnaMatching01/Anna-Matching Survey (Responses).csv"
+    dataset_path = "Anna-Matching Survey (Responses).csv"
 
     training_df0 = read_dataset(dataset_path)
     
